@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
   ) { }  // inject private service
 
   ngOnInit(): void {
+    localStorage.clear();
+
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -53,8 +55,8 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['dashboard'])
           },
           error: (err) => {
-            // console.log("error: ", err);
-            this.toastr.error(err.statusText, 'Error', {
+            console.log("error: ", err);
+            this.toastr.error("Please ensure you enter the accurate credentials for access.", 'Error', {
               timeOut: 3000
             });
           }

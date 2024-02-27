@@ -15,8 +15,10 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 })
 export class DashboardComponent implements OnInit {
   public dashboarData: any = [];
-  private pieChart: am4charts.PieChart3D = new am4charts.PieChart3D;
-  private barChart: am4charts.XYChart3D = new am4charts.XYChart3D;
+  // private pieChart: am4charts.PieChart3D = new am4charts.PieChart3D;
+  // private barChart: am4charts.XYChart3D = new am4charts.XYChart3D;
+  private pieChart: any = null;
+  private barChart: any = null;
 
   constructor(@Inject(PLATFORM_ID) private platformId: any, private zone: NgZone, private auth: AuthService, private api: ApiService) { }
 
