@@ -1,0 +1,60 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2">
+    <h5 class="navbar-brand col-md-3 col-lg-2 text-muted me-0 px-3 fs-6">Dashboard</h5>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a (click)="logout()" class="nav-link px-3 cursor-pointer text-muted sans-serif"><i
+                    class="fa fa-sign-out"></i> Sign Out</a>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid container-custom outer">
+    <h3>Overview</h3>
+    <div class="row justify-content-md-center pb-5">
+        <div class="col col-lg-6">
+            <div class="card">
+                <div class="card-header cstm-header">
+                    Card Title
+                </div>
+                <div class="card-body cstm-card-body">
+                    <div id="piechartdiv" style="width: 100%; height: 290px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6">
+            <div class="card">
+                <div class="card-header cstm-header">
+                    Card Title
+                </div>
+                <div class="card-body cstm-card-body">
+                    <div id="bar3Dchartdiv" style="width: 100%; height: 290px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>User List</h3>
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <div class="card">
+                <table class="table table-bordered mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">User Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of dashboarData.tableUsers; let i = index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
